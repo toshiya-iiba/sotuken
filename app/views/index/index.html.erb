@@ -1,0 +1,37 @@
+
+<br>
+<br>
+<br>
+<div class="row">
+	<div class="col-xs-3"></div>
+	<div class="col-xs-6 container">
+		<h1>料理レシピリスト</h1>
+		<table border="1">
+  		<table class="table table-striped table-bordered table-hover table-responsive">
+		  	<thead>
+				<tr>
+					<th>recipe_id</th>
+					<th>recipe_title</th>
+					<th>甘さ度</th>
+					<th>タグ</th>
+				</tr>
+			</thead>
+				<% @recipe.each do |recipe| %>
+					<thead>
+						<td><%= recipe.id %></td>
+						<td><%= recipe.name %></td>
+						<td><%= recipe.sweet %></td>
+						<td>
+							<% if recipe.sweet < 50.0 then %>
+								<span>甘い</span>
+							<% else %>
+								<span>甘くない</span>
+							<% end %>
+						</td>			
+					</thead>
+				<% end %>
+			</table>
+		</table>
+	</div>
+	<div class="col-xs-3"></div>
+</div>
